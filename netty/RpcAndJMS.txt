@@ -1,0 +1,5 @@
+RPC: 远程过程调用
+    客户端可以像调用本地方法一样调用另一个进程的方法，简而言之，就是   程序A通过网络调用程序B的方法
+    基于响应返回
+    隐藏了socket细节
+thirft  thrift -gen java login.thrift
