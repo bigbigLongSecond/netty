@@ -14,7 +14,7 @@ import java.net.Socket;
 public class Service {
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = new ServerSocket(8899);
-        Socket socket= serverSocket.accept();;
+        Socket socket= serverSocket.accept();
         while (true){
             OutputStream outputStream = socket.getOutputStream();
             InputStream inputStream = socket.getInputStream();

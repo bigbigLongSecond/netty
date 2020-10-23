@@ -1,6 +1,7 @@
 package com.test;
 
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class TestJava {
 
@@ -8,7 +9,10 @@ public class TestJava {
 
     public static void main(String[] args) {
 
- 
+        ConcurrentHashMap<String, String> hashMap = new ConcurrentHashMap<>();
+        hashMap.put("123" , "hello");
+        hashMap.get("123");
+        hashMap.remove("123");
 
         HashMap map = new HashMap();
 

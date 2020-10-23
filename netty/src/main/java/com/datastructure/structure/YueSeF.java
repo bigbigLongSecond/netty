@@ -55,8 +55,6 @@ public class YueSeF {
                 currnt.next = new ListNode(i);
                 currnt = currnt.next ;
             }
-
-            
         }
         return node;
     }

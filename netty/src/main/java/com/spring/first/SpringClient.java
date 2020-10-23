@@ -3,8 +3,11 @@ package com.spring.first;
 import org.springframework.beans.factory.support.BeanDefinitionReader;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+
+import java.util.ArrayList;
 
 /**
  * @author dzl
@@ -33,28 +36,20 @@ import org.springframework.core.io.Resource;
  *        3.整个定义的封装
  * 假设让我去写一个xml对应解析类？
  *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
  */
 public class SpringClient {
     public static void main(String[] args) {
-        //
-        Resource resource = new ClassPathResource("applicationContext.xml");
-        // 1.依赖注入的父接口  2.提供bean的创建、属性注值 绑定 和 初始化  3.枚举所有的实例  4.序列化
-        DefaultListableBeanFactory defaultListableBeanFactory = new DefaultListableBeanFactory();
-        BeanDefinitionReader reader = new XmlBeanDefinitionReader(defaultListableBeanFactory);
-        reader.loadBeanDefinitions(resource);
-        Student student = defaultListableBeanFactory.getBean("student", Student.class);
-        System.out.println(student);
+        ArrayList<String> list = new ArrayList<>(0);
+        list.add("hello");
+//        Resource resource = new ClassPathResource("applicationContext.xml");
+//        // 1.依赖注入的父接口  2.提供bean的创建、属性注值 绑定 和 初始化  3.枚举所有的实例  4.序列化
+//        DefaultListableBeanFactory defaultListableBeanFactory = new DefaultListableBeanFactory();
+//        BeanDefinitionReader reader = new XmlBeanDefinitionReader(defaultListableBeanFactory);
+//        reader.loadBeanDefinitions(resource);
+//        Student student = defaultListableBeanFactory.getBean("student", Student.class);
+//
+//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+////        Student student = (Student) context.getBean("student");
+//        System.out.println(student);
     }
 }

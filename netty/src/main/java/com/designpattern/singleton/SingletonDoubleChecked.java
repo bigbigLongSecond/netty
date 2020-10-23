@@ -10,7 +10,7 @@ public class SingletonDoubleChecked {
 
     private SingletonDoubleChecked() {
     }
-    public static SingletonDoubleChecked getInstance(){
+    public static SingletonDoubleChecked getInstance() {
         if (singleTon == null){
             synchronized (SingletonDoubleChecked.class){
                 singleTon = new SingletonDoubleChecked();

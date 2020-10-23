@@ -9,10 +9,12 @@ import java.util.Arrays;
 public class PopSort {
 
     public static void main(String[] args) {
-        int[] a = {1,232,32,412,32,42,34,2,32,423,1,3,42,3,12,4,4,213,25,421,4};
+//        int[] a = {1,232,32,412,32,42,34,2,32,423,1,3,42,3,12,4,4,213,25,421,4};
         PopSort popSort = new PopSort();
-        popSort.popSortC(a);
-        System.out.println(Arrays.toString(a));
+//        popSort.popSortC(a);
+//        System.out.println(Arrays.toString(a));
+        popSort.dfs(1,2);
+
     }
 
     /**
@@ -52,7 +54,6 @@ public class PopSort {
      *  不难看出前面的 1 3 4 4 5 5 8 已经排好序了，只有后面的 10 9 10 三个元素
      *  存在乱序，如果我们确认最后一次发生比较的下标index,从index开始比较就可以大大节省运算量
      */
-
     public void popSortC(int[] array){
         int hi = array.length;
         int index = 0;
@@ -90,6 +91,43 @@ public class PopSort {
         array[i] = array[j];
         array[j] = num;
     }
+    /**
+     * 数字全排列问题
+     * n个数字能排列成几个组合
+     * 1：n个数字，就意味着有n个箱子
+     */
+
+    /**
+     * step one : 如何往盒子里放扑克牌
+     */
+//    int[] a = new int[9];
+//    int[] book = new int[9];
+//
+    int[]  box = new int[9];
+    int[] numbers = new int[9];
+    public void dfs (int step , int num){
+        if (step == num+1){
+            for (int i = 1; i <= num; i++) {
+                System.out.print(box[i]);
+            }
+            System.out.println();
+            return;
+        }
+        for (int i = 1; i <= num; i++) {
+            if (numbers[i] == 0){
+                box[step] = i;
+                numbers[i] = 1;
+                dfs(step+1 , num);
+                numbers[i] = 0;
+            }
+        }
+    }
+
+/**
+ * step one: 给特定箱子放入值
+ */
+
+
 
 
 }
