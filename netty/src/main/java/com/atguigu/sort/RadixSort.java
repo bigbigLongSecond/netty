@@ -7,13 +7,13 @@ import java.util.Date;
 public class RadixSort {
 
 	public static void main(String[] args) {
-		int arr[] = { 53, 3, 542, 748, 14, 214};
+//		int arr[] = { 53, 3, 542, 748, 14, 214};
 		
 		// 80000000 * 11 * 4 / 1024 / 1024 / 1024 =3.3G 
-//		int[] arr = new int[8000000];
-//		for (int i = 0; i < 8000000; i++) {
-//			arr[i] = (int) (Math.random() * 8000000); // 生成一个[0, 8000000) 数
-//		}
+		int[] arr = new int[8000000];
+		for (int i = 0; i < 8000000; i++) {
+			arr[i] = (int) (Math.random() * 8000000); // 生成一个[0, 8000000) 数
+		}
 		System.out.println("排序前");
 		Date data1 = new Date();
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -26,7 +26,7 @@ public class RadixSort {
 		String date2Str = simpleDateFormat.format(data2);
 		System.out.println("排序前的时间是=" + date2Str);
 		
-		System.out.println("基数排序后 " + Arrays.toString(arr));
+//		System.out.println("基数排序后 " + Arrays.toString(arr));
 		
 	}
 
@@ -84,7 +84,7 @@ public class RadixSort {
 				}
 				//第i+1轮处理后，需要将每个 bucketElementCounts[k] = 0 ！！！！
 				bucketElementCounts[k] = 0;
-				
+
 			}
 			//System.out.println("第"+(i+1)+"轮，对个位的排序处理 arr =" + Arrays.toString(arr));
 			

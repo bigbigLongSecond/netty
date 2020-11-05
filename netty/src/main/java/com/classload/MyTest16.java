@@ -69,9 +69,9 @@ public class MyTest16 extends ClassLoader {
         test(load);
     }
     public static void test(ClassLoader classLoader) throws Exception{
-        Class clazz = classLoader.loadClass("D:\\dzl\\开发计划\\DBQ\\DBQ监测-0214\\Hello");
-        Object object = clazz.newInstance();
-        System.out.println(object);
+//        Class clazz = classLoader.loadClass("D:\\dzl\\开发计划\\DBQ\\DBQ监测-0214\\Hello");
+//        Object object = clazz.newInstance();
+//        System.out.println(object);
 
     }
 }

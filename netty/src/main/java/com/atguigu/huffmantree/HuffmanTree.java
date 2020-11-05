@@ -4,6 +4,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * 赫夫曼数
+ * 一个树有n个叶子结点 若该树的带权路径长度（wpl）最小，就把这样的数称为最优二叉树
+ * 路径长度 ---> 由根节点出发到l层的路径长度为l-1
+ * 结点的权：将树的结点赋予一个有意义的数
+ * 带权路径长度：路径长度 * 结点的权
+ * 树的带权路径长度：所有的叶子结点的带权路径之和，结点的权越大越放在最前
+ *
+ */
 public class HuffmanTree {
 
 	public static void main(String[] args) {

@@ -12,7 +12,6 @@ public class FutureExample {
         FutureExample example =new FutureExample();
         example.example2();
 
-        CompletableFuture
     }
     public void example1(){
         ExecutorService executorService = Executors.newSingleThreadExecutor();

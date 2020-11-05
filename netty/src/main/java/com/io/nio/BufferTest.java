@@ -18,7 +18,7 @@ public class BufferTest {
         ByteBuffer byteBuffer=ByteBuffer.allocate(64);
         byteBuffer.putInt(123);
         byteBuffer.putLong(123213123L);
-        byteBuffer.putChar('我');
+//        byteBuffer.putChar('我');
         byteBuffer.putShort((short)2);
 
         byteBuffer.flip();
