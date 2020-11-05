@@ -2,14 +2,18 @@ package com.designpattern.observe;
 
 /**
  * @author dzl
- * 2020/7/3 14:09
+ * 2020/10/26 14:51
  * @Description
  */
 public class Client {
-    public static void main(String[] args){
-        Subject sub = new ConcreteSubject();
-        sub.addObserver(new ConcreteObserver1()); //添加观察者1
-        sub.addObserver(new ConcreteObserver2()); //添加观察者2
-        sub.doSomething();
+    public static void main(String[] args) {
+        Observe observe1 = new PoliceObserver();
+        Observe observe2 = new PoliceObserver();
+        Observe observe3 = new PoliceObserver();
+        CrimObservable observable = new CrimObservable();
+        observable.addObserve(observe1);
+        observable.addObserve(observe2);
+        observable.addObserve(observe3);
+        observable.crime("努力学习");
     }
 }

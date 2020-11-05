@@ -6,7 +6,7 @@ import java.lang.reflect.Proxy;
 /**
  * @author dzl
  * 2020/6/1 13:12
- * @Description
+ * @Description 发发放缩法
  */
 public class DynamicProxy {
     public static void main(String[] args) {

@@ -12,22 +12,21 @@ import java.util.*;
  */
 public class Sort {
     public static void main(String[] args) {
-//        int[] a = {6, 3, 1, 7, 1, 5, 8, 9, 2, 4};
-        int[] a = new int[100000000];
-        for (int i = 0; i < 100000000; i++) {
-            a[i] = new Random().nextInt(100000000);
-        }
-        long l = System.currentTimeMillis();
+        int[] a = {6, 3, 1, 7, 1, 5, 8, 9, 2, 4};
+//        int[] a = new int[100000000];
+//        for (int i = 0; i < 100000000; i++) {
+//            a[i] = new Random().nextInt(100000000);
+//        }
+//        long l = System.currentTimeMillis();
 
-//        Sort sort = new Sort();
+        Sort sort = new Sort();
 //        sort.fastSort(a, 0 , a.length-1);
 //        System.out.println(sort.isPalindrome(121));
-//        sort.insert(a);
+        sort.shell(a);
 //        Cell cell = new Cell(1,1,false);
 //        sort.search(  1,1,0,4);
 //        sort.bfs(4);
         System.out.println(Arrays.toString(a));
-        System.out.println(System.currentTimeMillis() - l);
     }
 
     public void sortBigtoSmallA(int[] array) {
@@ -509,6 +508,57 @@ public class Sort {
             arr[left++] = temp[t++];
         }
 
+    }
+
+
+
+
+    public void insert1(int[] array){
+        int j , temp;
+        for (int i = 1; i < array.length; i++) {
+            j = i - 1;
+            temp = array[i];
+            while (j >= 0 && array[j] > temp){
+                array[j+1] = array[j];
+                j--;
+            }
+            array[j+1] = temp;
+        }
+    }
+    public void shell(int[] array){
+        int i , j ,temp, gap = 1 , len = array.length;
+        while (gap< len/3){
+            gap = gap*3+1;
+        }
+        while (gap>0){
+            for ( i = gap; i < array.length; i++) {
+                j = i - gap;
+                temp = array[i];
+                while (j >= 0 && array[j] > temp){
+                    array[j+1] = array[j];
+                    j -= gap;
+                }
+                array[j+gap] = temp;
+            }
+            gap /=3;
+        }
+
+    }
+
+
+    // Java实现
+    public  void shell_sort(int[] arr) {
+        int gap = 1, i, j, len = arr.length;
+        int temp;
+        while (gap < len / 3)
+            gap = gap * 3 + 1;
+        for (; gap > 0; gap /= 3)
+            for (i = gap; i < len; i++) {
+                temp = arr[i];
+                for (j = i - gap; j >= 0 && arr[j] > temp; j -= gap)
+                    arr[j + gap] = arr[j];
+                arr[j + gap] = temp;
+            }
     }
 
 

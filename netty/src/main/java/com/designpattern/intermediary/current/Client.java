@@ -21,6 +21,5 @@ public class Client {
         collB.setNumber(1000, am);
         System.out.println("collB的number值为："+collB.getNumber());
         System.out.println("collA的number值为B的0.1倍："+collA.getNumber());
-
     }
 }

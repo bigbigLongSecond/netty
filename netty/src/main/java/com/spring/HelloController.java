@@ -1,7 +1,5 @@
 package com.spring;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 /**
  * @author dzl
  * 2020/7/31 17:05
@@ -13,11 +11,9 @@ public class HelloController {
         for (int i = 0; i < 10; i++) {
             strings[i] = "hello"+i;
         }
-        for (String key:strings
-             ) {
+        for (String key:strings) {
             System.out.println("hello World");
             System.out.println(key);
-
         }
     }
 }

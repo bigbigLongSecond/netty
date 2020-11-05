@@ -2,6 +2,7 @@ package com.thread;
 
 import java.util.ArrayList;
 import java.util.concurrent.*;
+import java.util.concurrent.locks.Lock;
 
 /**
  * @author dzl
@@ -22,6 +23,7 @@ public class CallableDemo {
             public TaskWithResult(int id){
                 this.id = id;
             }
+            @Override
             public String call() throws Exception {
                 Thread.sleep(1000);
 
