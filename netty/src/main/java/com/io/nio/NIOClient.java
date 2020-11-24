@@ -24,10 +24,10 @@ public class NIOClient {
                 socketChannel.configureBlocking(false);
                 Selector selector=Selector.open();
                 //监听客户端是否发起连接
-                socketChannel.register(selector, SelectionKey.OP_CONNECT);
                 socketChannel.connect(new InetSocketAddress("127.0.0.1",8899));
+                socketChannel.register(selector, SelectionKey.OP_CONNECT);
 
-                while (true){
+                for (;;){
                     selector.select();
                     Set<SelectionKey> selectionKeys=selector.selectedKeys();
 
@@ -50,7 +50,8 @@ public class NIOClient {
                                             writeBuffer.clear();
                                             InputStreamReader input=new InputStreamReader(System.in);
                                             BufferedReader bufferedReader=new BufferedReader(input);
-                                            String message=bufferedReader.readLine();
+                                            String message = "server send  ";
+                                            message += bufferedReader.readLine();
 
                                             writeBuffer.put(message.getBytes());
                                             writeBuffer.flip();

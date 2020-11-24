@@ -19,7 +19,7 @@ public class HeapSort {
 		//要求将数组进行降序排列
 		int arr[] = {4, 6, 8,4,2,1,1, 5, 9};
 		HeapSort heapSort = new HeapSort();
-		heapSort.heapSort(arr);
+		heapSort.heapSort2(arr);
 		System.out.println(Arrays.toString(arr));
 	}
 
@@ -58,12 +58,54 @@ public class HeapSort {
 			}
 		}
 		array[i] = temp;
-
 	}
+
 	private void swap(int[] array, int i, int j) {
 		int num = array[i];
 		array[i] = array[j];
 		array[j] = num;
+	}
+
+
+	/**
+	 * 堆排序
+	 * 1.创建一个大顶堆
+	 * 2.将0和末尾元素交换
+	 * 3.再次创建大顶堆
+	 * @param array
+	 */
+	public void heapSort2(int[] array){
+		int i= array.length/2-1;
+		for (;i>=0;i--){
+			adjustSort2(array,i,array.length);
+		}
+		for (int j = array.length-1; j >= 0 ; j--) {
+			swap(array,0,j);
+			adjustSort2(array,0,j);
+
+		}
+
+	}
+
+	/**
+	 * 从小到大排序
+	 * @param array
+	 * @param i
+	 * @param length
+	 */
+	private void adjustSort2(int[] array, int i, int length) {
+		int temp = array[i];
+		for (int j = 2*i+1; j <length ; j = 2*j+1) {
+			if (j+1<length && array[j+1] > array[j])
+				j++;
+			if (array[j] >temp){
+				array[i] = array[j];
+				i=j;
+			}else {
+				break;
+			}
+		}
+		array[i] = temp;
 	}
 
 

@@ -28,8 +28,8 @@ public class MyTest1 {
     private Lock lock = new ReentrantLock();
 
     public void method() {
+        lock.lock();
         try {
-            lock.lock();
 
             try {
                 Thread.sleep(1000);
@@ -48,11 +48,7 @@ public class MyTest1 {
         MyTest1 myTest1 = new MyTest1();
 
         IntStream.range(0, 10).forEach(i -> {
-            new Thread(() -> {
-                myTest1.method();
-            }).start();
+            new Thread(myTest1::method).start();
         });
     }
-
-
 }

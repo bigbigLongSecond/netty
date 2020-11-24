@@ -15,6 +15,7 @@ public class JoinExample {
 
         Thread thread1 = new Thread(joinExample::writer, "线程1");
         thread1.start();
+        System.out.println("start");
 
         thread1.join();
 
@@ -25,6 +26,11 @@ public class JoinExample {
     }
 
     public void writer(){
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         this.x = 100;
         this.y = 200;
         this.flag = true;

@@ -1,5 +1,6 @@
 package com.atguigu.hashtab;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class HashTabDemo {

@@ -19,6 +19,5 @@ public class Observable {
     public void notifyObserves(String event){
         for (Observe observe :observes)
             observe.update(event);
-
     }
 }

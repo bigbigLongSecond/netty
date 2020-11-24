@@ -1,7 +1,11 @@
 package com.atguigu.avl;
 
 
-
+/**
+ * AVL自平衡二叉树
+ * 左右两颗子树的高度不超过1
+ *
+ */
 public class AVLTreeDemo {
 
 	public static void main(String[] args) {
@@ -24,8 +28,6 @@ public class AVLTreeDemo {
 		System.out.println("树的左子树高度=" + avlTree.getRoot().leftHeight()); // 2
 		System.out.println("树的右子树高度=" + avlTree.getRoot().rightHeight()); // 2
 		System.out.println("当前的根结点=" + avlTree.getRoot());//8
-		
-		
 	}
 
 }
@@ -205,8 +207,6 @@ class Node {
 		right = right.right;
 		//把当前结点的左子树(左子结点)设置成新的结点
 		left = newNode;
-		
-		
 	}
 	
 	//右旋转

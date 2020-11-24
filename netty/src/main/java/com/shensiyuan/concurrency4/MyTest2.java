@@ -22,7 +22,7 @@ public class MyTest2 {
     public static void main(String[] args) {
         BoundedContainer boundedContainer = new BoundedContainer();
 
-        IntStream.range(0, 10).forEach(i -> new Thread(() -> {
+        IntStream.range(0, 10000).forEach(i -> new Thread(() -> {
             try {
                 boundedContainer.put("hello");
             } catch (InterruptedException ex) {
@@ -30,7 +30,7 @@ public class MyTest2 {
             }
         }).start());
 
-        IntStream.range(0, 10).forEach(i -> new Thread(() -> {
+        IntStream.range(0, 10000).forEach(i -> new Thread(() -> {
             try {
                 boundedContainer.take();
             } catch (InterruptedException ex) {

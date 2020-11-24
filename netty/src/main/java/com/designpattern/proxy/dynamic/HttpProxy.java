@@ -11,9 +11,10 @@ import java.lang.reflect.Proxy;
  */
 public class HttpProxy implements InvocationHandler {
     private HttpUtil iHttp;
-    public IHttp getInstance(HttpUtil iHttp){
+
+    public IHttp getInstance(HttpUtil iHttp) {
         this.iHttp = iHttp;
-        return (IHttp) Proxy.newProxyInstance(iHttp.getClass().getClassLoader() ,iHttp.getClass().getInterfaces(),this);
+        return (IHttp) Proxy.newProxyInstance(iHttp.getClass().getClassLoader(), iHttp.getClass().getInterfaces(), this);
     }
 
     @Override

@@ -1,10 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
     <bean id="student" class="com.spring.first.Student"  >
         <property name="name" value="dzl"/>
         <property name="age" value="20"/>
     </bean>
+        <!--定义被代理的对象-->
+<!--    <bean id="h1" class="com.spring.second.HelloWorldImpl1"/>-->
+<!--    <bean id="h2" class="com.spring.second.HelloWorldImpl2"/>-->
+<!--    &lt;!&ndash;定义通知内容&ndash;&gt;-->
+<!--    <bean id="timeHandle" class="com.spring.second.TimeHandler"/>-->
+<!--    &lt;!&ndash; 定义切入点位置&ndash;&gt;-->
+<!--    <bean id="timePointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut">-->
+<!--        <property name="pattern" value=".*doPrint"/>-->
+<!--    </bean>-->
+<!--    &lt;!&ndash; 使切入点和通知相关联 切面&ndash;&gt;-->
+<!--    <bean id="timeHandleAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">-->
+<!--        <property name="advice" ref="timeHandle"/>-->
+<!--        <property name="pointcut" ref="timePointcut"/>-->
+<!--    </bean>-->
+<!--    <bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">-->
+<!--        &lt;!&ndash;proxy object&ndash;&gt;-->
+<!--        <property name="target" ref="h1"/>-->
+<!--        &lt;!&ndash;use advisor&ndash;&gt;-->
+<!--        <property name="interceptorNames" value="timeHandleAdvisor" />-->
+<!--        &lt;!&ndash; proxy interface&ndash;&gt;-->
+<!--        <property name="proxyInterfaces" value="com.spring.second.HelloWorld" />-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash; 目标对象 &ndash;&gt;-->
+<!--    <bean id="knight" class="com.spring.three.BraveKnight"/>-->
+<!--    &lt;!&ndash; 切面bean &ndash;&gt;-->
+<!--    <bean id="mistrel" class="com.spring.three.Minstrel"/>-->
+<!--    &lt;!&ndash; 面向切面编程 &ndash;&gt;-->
+<!--    <aop:config>-->
+<!--        <aop:aspect ref="mistrel">-->
+<!--            &lt;!&ndash; 定义切点 &ndash;&gt;-->
+<!--            <aop:pointcut expression="execution(* *.saying(..))" id="embark"/>-->
+<!--            &lt;!&ndash; 声明前置通知 (在切点方法被执行前调用)&ndash;&gt;-->
+<!--            <aop:before method="beforSay" pointcut-ref="embark"/>-->
+<!--            &lt;!&ndash; 声明后置通知 (在切点方法被执行后调用)&ndash;&gt;-->
+<!--            <aop:after method="afterSay" pointcut-ref="embark"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+<!--    &lt;!&ndash;1.dingyi &ndash;&gt;-->
+<!--    <bean id="h1" class="com.spring.second.HelloWorldImpl1"/>-->
+<!--    &lt;!&ndash;2.tongzhiduixiang&ndash;&gt;-->
+<!--    <bean id="timeHander" class="com.spring.second.TimeHandler"/>-->
+<!--    &lt;!&ndash;3. pointcut&ndash;&gt;-->
+<!--    <bean id="pointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut">-->
+<!--        <property name="pattern" value=".*doPrint"/>-->
+<!--    </bean>-->
+<!--    &lt;!&ndash;4. qiemian&ndash;&gt;-->
+<!--    <bean id="timeHanderAdversor" class="org.springframework.aop.support.DefaultPointcutAdvisor">-->
+<!--        <property name="pointcut" ref="pointcut"/>-->
+<!--        <property name="advice" ref="timeHander"/>-->
+<!--    </bean>-->
+<!--    &lt;!&ndash; 5.proxy&ndash;&gt;-->
+<!--    <bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">-->
+<!--        <property name="target" ref="h1"/>-->
+<!--        <property name="proxyInterfaces" value="com.spring.second.HelloWorld"/>-->
+<!--        <property name="interceptorNames" value="timeHanderAdversor"/>-->
+<!--    </bean>-->
+
+
+
+
+
+
+
+
+
+    <bean id="h1" class="com.spring.second.HelloWorldImpl1"/>
+    <bean id="timeHandle" class="com.spring.second.TimeHandler"/>
+    <bean id="pointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut">
+        <property name="pattern" value=".*doPrint"/>
+    </bean>
+    <bean id="advisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+        <property name="pointcut" ref="pointcut"/>
+        <property name="advice" ref="timeHandle"/>
+    </bean>
+    <bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="h1"/>
+        <property name="proxyInterfaces" value="com.spring.second.HelloWorld"/>
+        <property name="interceptorNames" value="advisor"/>
+    </bean>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </beans>

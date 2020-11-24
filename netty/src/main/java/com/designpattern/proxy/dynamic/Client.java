@@ -9,7 +9,7 @@ public class Client {
     public static void main(String[] args) {
         HttpUtil iHttp = new HttpUtil();
         IHttp iHttp1 = new HttpProxy().getInstance(iHttp);
-        iHttp.request("hello");
-        iHttp.onSuccess("end");
+        iHttp1.request("hello");
+        iHttp1.onSuccess("end");
     }
 }

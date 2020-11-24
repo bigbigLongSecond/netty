@@ -2,11 +2,13 @@ package com.thread;
 
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author dzl
  * @version 1.0
  * @date 2020/1/8 14:01
+ * 2000
  */
 public class AtomicTest {
     public static void main(String[] args) {
@@ -19,6 +21,10 @@ public class AtomicTest {
         System.out.println("getNew " + atomicBoolean.get());
         boolean expectedValue = true;
         boolean newValue = false;
+        AtomicInteger atomicInteger = new AtomicInteger(10);
+        int i = atomicInteger.incrementAndGet();
+        int i1 = atomicInteger.addAndGet(4);
+        System.out.println(i1);
 
         boolean value = atomicBoolean.compareAndSet(expectedValue, newValue);
         System.out.println("compareAndSet后返回的值："+value);

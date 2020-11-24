@@ -14,6 +14,6 @@ public class Client {
         observable.addObserve(observe1);
         observable.addObserve(observe2);
         observable.addObserve(observe3);
-        observable.crime("努力学习");
+        observable.crime("fake news");
     }
 }

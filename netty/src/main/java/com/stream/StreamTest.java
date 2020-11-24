@@ -20,10 +20,8 @@ public class StreamTest {
         streamBeans.add(new StreamBean(DataType.OPEN ,"change" , 18,1,true));
 
         List<StreamBean> collect = streamBeans.stream().filter(StreamBean::isSs).sorted((b,x )-> x.getAge()-b.getAge()).limit(2).collect(Collectors.toList());
-        for (StreamBean b:collect
-             ) {
+        for (StreamBean b:collect) {
             System.out.println(b);
-
         }
     }
 }

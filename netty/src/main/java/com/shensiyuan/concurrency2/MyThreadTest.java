@@ -20,7 +20,6 @@ class MyThread implements Runnable {
     @Override
     public void run() {
         x = 0;
-
         while (true) {
             System.out.println("result: " + x++);
 

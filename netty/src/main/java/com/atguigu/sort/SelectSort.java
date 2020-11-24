@@ -32,15 +32,10 @@ public class SelectSort {
 		
 		//System.out.println("排序后");
 		//System.out.println(Arrays.toString(arr));
-		
-		
 	}
 	
 	//选择排序
 	public static void selectSort(int[] arr) {
-		
-		
-		
 		//在推导的过程，我们发现了规律，因此，可以使用for来解决
 		//选择排序时间复杂度是 O(n^2)
 		for (int i = 0; i < arr.length - 1; i++) {

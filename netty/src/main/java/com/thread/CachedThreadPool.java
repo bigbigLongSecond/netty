@@ -16,6 +16,7 @@ public class CachedThreadPool {
 
         class MyRunnable implements Runnable{
             private int a = 5;
+            @Override
             public void run() {
                 synchronized(this){
                     for(int i=0;i<10;i++){
@@ -26,8 +27,8 @@ public class CachedThreadPool {
                     }
                 }
             }
-
         }
+
         MyRunnable myRunnable = new MyRunnable();
         ExecutorService executorService = Executors.newCachedThreadPool();
         for (int i = 0; i < 5; i++) {
@@ -35,6 +36,7 @@ public class CachedThreadPool {
 
         }
         executorService.shutdown();
+        System.out.println("hello");
 
 //        int i = 0;
 //        for (;;){
